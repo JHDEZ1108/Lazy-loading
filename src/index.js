@@ -3,8 +3,15 @@
  * When you're ready to start on your site, clear the file. Happy hacking!
  **/
 
-//Creamos una imagen
-//Agregamos una imagen
+//Método para conseguir una imagen random desde nuestra api
+const maximum = 826;
+const minimum = 1;
+
+const random = () =>{
+  return Math.floor(Math.random() * (maximum - minimum) + minimum);
+}
+
+//Creamos y agregamos imagenes
 
 const createImageNode = () =>{
   const container = document.createElement("div");
@@ -13,7 +20,7 @@ const createImageNode = () =>{
 
   const image = document.createElement("img");
   image.className= "mx-auto";
-  image.src = "https://rickandmortyapi.com/api/character/avatar/2.jpeg";
+  image.src = `https://rickandmortyapi.com/api/character/avatar/${random()}.jpeg`;
   
   container.appendChild(image);
   

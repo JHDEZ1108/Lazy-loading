@@ -1,4 +1,7 @@
 {
+  "name": "lazy-loading",
+  "version":"0.1.0",
+  "author": "Josué Hernández/JHDEZ1108",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",

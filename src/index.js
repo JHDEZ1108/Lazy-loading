@@ -27,7 +27,15 @@ const createImageNode = () =>{
   return container;
 }
 
-const newImage = createImageNode();
-const mountNode = document.getElementById("images");
 
-mountNode.appendChild(newImage);
+
+const mountNode = document.getElementById("images");  
+const addButton = document.querySelector("button");
+
+const addImage = ()=> {
+  const newImage = createImageNode();
+  mountNode.append(newImage);
+}
+
+addButton.addEventListener("click", addImage);
+

@@ -16,7 +16,7 @@ This is a template to understand DOM manipulation
     cd work-shop-DOM
     ```
     
-1.  **Instala dependencias.**
+2.  **Instala dependencias.**
 
     Desde la raiz del repositorio:
 
@@ -24,7 +24,7 @@ This is a template to understand DOM manipulation
     yarn
     ```
 
-1.  **Inicia el proyecto**
+3.  **Inicia el proyecto**
 
     ```sh
     yarn start

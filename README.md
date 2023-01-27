@@ -13,7 +13,7 @@ This is a template to understand DOM manipulation
 
     ```sh
     git clone git@github.com:JHDEZ1108/Lazy-loading.git
-    cd work-shop-DOM
+    cd Lazy-loading
     ```
     
 2.  **Instala dependencias.**
@@ -21,13 +21,13 @@ This is a template to understand DOM manipulation
     Desde la raiz del repositorio:
 
     ```sh
-    yarn
+    npm install
     ```
 
 3.  **Inicia el proyecto**
 
     ```sh
-    yarn start
+    npm start
     ```
 
     El sitio estará disponible en http://localhost:8080.

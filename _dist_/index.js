@@ -1,33 +1,37 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { registerImage, clearValue } from './utils/lazy.js';
+import { createImageNodes } from './utils/utils.js';
+import { getData } from "./utils/getData.js";
 
-//Método para conseguir una imagen random desde nuestra api
 const maximum = 826;
 const minimum = 1;
-
 const random = () =>{
   return Math.floor(Math.random() * (maximum - minimum) + minimum);
 }
 
-//Creamos y agregamos imagenes
+const baseUrl = "https://rickandmortyapi.com/api/character";
+//Cargar las imagenes existentes cuando cargue la página
+const allData = document.querySelectorAll("img[data-src]");
+allData.forEach(registerImage);
 
-const createImageNode = () =>{
-  const container = document.createElement("div");
-  container.className= "p-5";
+
+//Agregar imagenes
+const mountNode = document.getElementById("images");  
+const addButton = document.querySelector("button");
+
+addButton.addEventListener("click", async() =>{
+  const idCharacter = random();  
+  const character = await getData(`${baseUrl}/${idCharacter}`);
+
+  const [node, image] = createImageNodes(character);
+
+  registerImage(image);
+  mountNode.append(node);
   
+})
 
-  const image = document.createElement("img");
-  image.className= "mx-auto";
-  image.src = `https://rickandmortyapi.com/api/character/avatar/${random()}.jpeg`;
-  
-  container.appendChild(image);
-  
-  return container;
-}
-
-const newImage = createImageNode();
-const mountNode = document.getElementById("images");
-
-mountNode.appendChild(newImage);
+//Limpiar
+const clean = document.querySelector("button[type='reset']");
+clean.addEventListener("click", () => {
+  mountNode.innerHTML = "";
+  clearValue();
+});

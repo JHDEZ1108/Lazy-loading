@@ -4,7 +4,7 @@ Lazy Loading
 
 This is a template to understand DOM manipulation 
           by using Lazy Loading feature.  
-### Demo: https://app.netlify.com/sites/lazy-loading-es/overview
+### Demo: https://lazy-loading-es.netlify.app/
 --------
 <h3 align="center">
 🤖 Guía Rápida
